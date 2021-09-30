@@ -16,25 +16,25 @@ computerPlay();
 function playGame(playerSelection, computerSelection) {
     var playerSelection = prompt("Welcome to Rock-Paper-Scissors! Please enter your choice:")
     var playerSelection = playerSelection.toLowerCase();
-    var computerSelection = computerPlay();
-    if (playerSelection == "rock" && computerSelection == "Rock"){
-        return "This is a tie game! Nice!";
-    }else if(playerSelection == "rock" && computerSelection == "Paper"){
-        return "You Lost... Paper beats rock :(";
-    }else if(playerSelection == "rock" && computerSelection == "Scissors"){
-        return "Nice one! Rock beats scissors!";
-    }else if(playerSelection == "paper" && computerSelection == "Rock"){
-        return "Good prediction! Paper beats rock!";
-    }else if(playerSelection == "paper" && computerSelection == "Paper"){
-        return "It's a tie game! Let's go again!";
-    }else if(playerSelection == "paper" && computerSelection == "scissors"){
-        return "Yikes, the computer got you! Scissors beats paper!"
-    }else if(playerSelection == "scissors" && computerSelection == "Rock"){
-        return "Ouch! Rock smashes scissors!";
-    }else if(playerSelection == "scissors" && computerSelection == "Paper"){
-        return "Good one! Scissors slashes paper!";
+    var computerSelection = computerPlay().toLowerCase();
+    var playerCount = 0;
+    var computerCount = 0;
+    if (playerSelection == computerSelection){
+        return "Its a tie!";
+    }else if (playerSelection == "rock" && computerSelection == "paper"){
+        return computerCount += 1;
+    }else if (playerSelection == "rock" && computerSelection == "scissors"){
+        return playerCount += 1;
+    }else if (playerSelection == "paper" && computerSelection == "rock"){
+        return playerCount += 1;
+    }else if (playerSelection == "paper" && computerSelection == "scissors"){
+        return computerCount += 1;
+    }else if (playerSelection == "scissors" && computerSelection == "paper"){
+        return playerCount += 1;
     }else{
-        return "It's a tie!"
+        return computerCount += 1;
     };
 };
-playGame(playerSelection,computerSelection);
+playGame(playerSelection, computerSelection);
+console.log("Player Wins: {} Computer Wins: {}", playerCount, computerCount);
+
