@@ -22,19 +22,24 @@ function playGame(playerSelection, computerSelection) {
     if (playerSelection == computerSelection){
         return "Its a tie!";
     }else if (playerSelection == "rock" && computerSelection == "paper"){
+        console.log("Yikes! The computer won, paper beats rock!")
         return computerCount += 1;
     }else if (playerSelection == "rock" && computerSelection == "scissors"){
+        console.log("Nice shot! Rock beats scissors!")
         return playerCount += 1;
     }else if (playerSelection == "paper" && computerSelection == "rock"){
+        console.log("Heck yes! Paper covers rock!")
         return playerCount += 1;
     }else if (playerSelection == "paper" && computerSelection == "scissors"){
+        console.log("Aww snap! Scissors cuts through paper!")
         return computerCount += 1;
     }else if (playerSelection == "scissors" && computerSelection == "paper"){
+        console.log("+1 for you! Scissors beats paper!")
         return playerCount += 1;
     }else{
+        console.log("Ouch! Rock smashes scissors!")
         return computerCount += 1;
     };
 };
-playGame(playerSelection, computerSelection);
-console.log("Player Wins: {} Computer Wins: {}", playerCount, computerCount);
+playGame();
 
