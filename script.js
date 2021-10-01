@@ -14,11 +14,11 @@ function computerPlay() {
 computerPlay();
 
 function playRound(playerSelection, computerSelection) {
-    var playerSelection = prompt("Welcome to Rock-Paper-Scissors! Please enter your choice:")
-    var playerSelection = playerSelection.toLowerCase();
-    var computerSelection = computerPlay().toLowerCase();
-    var playerCount = 0;
-    var computerCount = 0;
+    let playerSelection = prompt("Welcome to Rock-Paper-Scissors! Please enter your choice:")
+    let playerSelection = playerSelection.toLowerCase();
+    let computerSelection = computerPlay().toLowerCase();
+    let playerCount = 0;
+    let computerCount = 0;
     if (playerSelection == computerSelection){
         return "Its a tie!";
     }else if (playerSelection == "rock" && computerSelection == "paper"){
@@ -41,6 +41,7 @@ function playRound(playerSelection, computerSelection) {
         return computerCount += 1;
     };
 };
+
 
 playRound();
 playRound();
