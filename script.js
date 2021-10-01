@@ -13,7 +13,7 @@ function computerPlay() {
 };
 computerPlay();
 
-function playGame(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     var playerSelection = prompt("Welcome to Rock-Paper-Scissors! Please enter your choice:")
     var playerSelection = playerSelection.toLowerCase();
     var computerSelection = computerPlay().toLowerCase();
@@ -22,24 +22,30 @@ function playGame(playerSelection, computerSelection) {
     if (playerSelection == computerSelection){
         return "Its a tie!";
     }else if (playerSelection == "rock" && computerSelection == "paper"){
-        console.log("Yikes! The computer won, paper beats rock!")
+        console.log("Yikes! The computer won, paper beats rock! Computer wins!")
         return computerCount += 1;
     }else if (playerSelection == "rock" && computerSelection == "scissors"){
-        console.log("Nice shot! Rock beats scissors!")
+        console.log("Nice shot! Rock beats scissors! Player wins!")
         return playerCount += 1;
     }else if (playerSelection == "paper" && computerSelection == "rock"){
-        console.log("Heck yes! Paper covers rock!")
+        console.log("Heck yes! Paper covers rock! Player wins!")
         return playerCount += 1;
     }else if (playerSelection == "paper" && computerSelection == "scissors"){
-        console.log("Aww snap! Scissors cuts through paper!")
+        console.log("Aww snap! Scissors cuts through paper! Computer wins!")
         return computerCount += 1;
     }else if (playerSelection == "scissors" && computerSelection == "paper"){
-        console.log("+1 for you! Scissors beats paper!")
+        console.log("+1 for you! Scissors beats paper! Player wins!")
         return playerCount += 1;
     }else{
-        console.log("Ouch! Rock smashes scissors!")
+        console.log("Ouch! Rock smashes scissors! Computer wins!")
         return computerCount += 1;
     };
 };
-playGame();
+
+playRound();
+playRound();
+playRound();
+playRound();
+playRound();
+
 
