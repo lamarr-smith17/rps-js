@@ -12,15 +12,15 @@ function computerPlay() {
     };
 };
 computerPlay();
-
-function playRound(playerCount, computerCount) {
-    let playerSelection = prompt("Welcome to Rock-Paper-Scissors! Please enter your choice:")
-    let playerSelection = playerSelection.toLowerCase();
+var playerCount = 0;
+var computerCount = 0;
+function playRound() {
+    playerSelection = prompt("Welcome to Rock-Paper-Scissors! Please enter your choice:")
+    playerSelection = playerSelection.toLowerCase();
     let computerSelection = computerPlay().toLowerCase();
-    playerCount = 0;
-    computerCount = 0;
     if (playerSelection == computerSelection){
-        return "Its a tie!";
+        console.log("It's a tie!")
+        return null;
     }else if (playerSelection == "rock" && computerSelection == "paper"){
         console.log("Yikes! The computer won, paper beats rock! Computer wins!")
         return computerCount += 1;
@@ -44,11 +44,13 @@ function playRound(playerCount, computerCount) {
 
 function game(){
     for (let i = 0; i < 5; i++){
-        playRound();                
+        playRound();              
     };
-    
+    if (playerCount > computerCount){
+        console.log("You have won " + playerCount + " " + "out of 5... Meaning you WON!! :D");
+    }else{
+        console.log("The computer won " + computerCount + " " + "out of 5... Meaning you lost... D:");
+    };
+    console.log("Player: " + playerCount +" " + "Computer: "+ computerCount);
 };
 game();
-// Added the loop that runs the game 5 times
-// Trying to figure out how to get the 
-// counter going
