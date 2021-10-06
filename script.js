@@ -46,9 +46,11 @@ function game(){
     for (let i = 0; i < 5; i++){
         playRound();              
     };
-    if (playerCount > computerCount){
+    if (playerCount == computerCount){
+        console.log("You have won " + playerCount + " " + "out of 5 and the computer won " + computerCount + " " + "out of 5... Meaning it's a tie! Not bad!");
+    }else if (playerCount > computerCount){
         console.log("You have won " + playerCount + " " + "out of 5... Meaning you WON!! :D");
-    }else{
+    } else {
         console.log("The computer won " + computerCount + " " + "out of 5... Meaning you lost... D:");
     };
     console.log("Player: " + playerCount +" " + "Computer: "+ computerCount);
