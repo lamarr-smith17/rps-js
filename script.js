@@ -1,9 +1,11 @@
+/* Start of code*/
 var playerCount = 0;
 var computerCount = 0;
 const container = document.createElement('div');
 container.classList.add('container');
 document.body.append(container);
 
+/*Buttons*/
 const rockButton = document.createElement('button');
 const paperButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
@@ -11,7 +13,24 @@ rockButton.innerHTML = 'Rock';
 paperButton.innerHTML = 'Paper';
 scissorsButton.innerHTML = 'Scissors';
 container.append(rockButton, paperButton, scissorsButton);
+rockButton.addEventListener ('click', () =>{
+    let playerSelection = "rock";
+    playRound(playerSelection);
+    gameCount(playerCount, computerCount);
+});
 
+paperButton.addEventListener ('click', () =>{
+    let playerSelection = 'paper';
+    playRound(playerSelection)
+    gameCount(playerCount, computerCount);
+});
+
+scissorsButton.addEventListener ('click', () =>{
+    let playerSelection = 'scissors';
+    playRound(playerSelection)
+    gameCount(playerCount, computerCount);
+});
+/* Results container*/
 const resultDiv = document.createElement('div');
 resultDiv.classList.add('resultDiv');
 container.append(resultDiv);
@@ -19,20 +38,15 @@ const resultText = document.createElement('p');
 resultText.classList.add('resultText');
 resultDiv.append(resultText);
 
-rockButton.addEventListener ('click', () =>{
-    let playerSelection = "rock";
-    playRound(playerSelection);
-});
-
-paperButton.addEventListener ('click', () =>{
-    let playerSelection = 'paper';
-    playRound(playerSelection)
-});
-
-scissorsButton.addEventListener ('click', () =>{
-    let playerSelection = 'scissors';
-    playRound(playerSelection)
-});
+/*The Counters*/
+const playerText = document.createElement('p');
+const computerText = document.createElement('p');
+playerText.id = 'playerText';
+computerText.id = 'computerText';
+resultDiv.append(playerText);
+resultDiv.append(computerText);
+playerText.innerHTML = 'Player: 0';
+computerText.innerHTML = 'Computer: 0';
 
 
 function computerPlay() {
@@ -48,7 +62,6 @@ function computerPlay() {
         return "Scissors"
     };
 };
-
 
 function playRound(playerSelection) {
     let computerSelection = computerPlay().toLowerCase();
@@ -76,40 +89,21 @@ function playRound(playerSelection) {
     };
 };
 
-// function scoreTrack(playerCount, computerCount)
-// {
-//     let playerTally = 0;
-//     let computerTally = 0;
-//     if (scoreTrack == playerCount){
-//         tally += 1;
-//         console.log(playerTally);
-//     }else if (scoreTrack == computerCount){
-//         computerTally += 1;
-//         console.log(computerTally);
-//     };
-    
-//     if (playerTally == 5){
-//         console.log('Player wins!');
-//     }else if (computerTally == 5){
-//         console.log('Computer wins!');
-//     };
-// };
+function gameCount(playerCount, computerCount){
+    if(playerCount){
+        playerText.innerHTML = 'Player: ' + playerCount;
+    }
+    if (computerCount){
+        computerText.innerHTML = 'Computer: ' + computerCount;
+    }
+    winner();
+}
 
-
-
-
-
-// function game(){
-//     // for (let i = 0; i < 5; i++){
-//     //     playRound();              
-//     // };
-//     if (playerCount == computerCount){
-//         console.log("You have won " + playerCount + " " + "out of 5 and the computer won " + computerCount + " " + "out of 5... Meaning it's a tie! Not bad!");
-//     }else if (playerCount > computerCount){
-//         console.log("You have won " + playerCount + " " + "out of 5... Meaning you WON!! :D");
-//     } else {
-//         console.log("The computer won " + computerCount + " " + "out of 5... Meaning you lost... D:");
-//     };
-//     console.log("Player: " + playerCount +" " + "Computer: "+ computerCount);
-// };
-
+function winner(){
+    if(playerCount == 5){
+        resultText.innerHTML = 'You won! Great job!';
+    }
+    if(computerCount == 5){
+        resultText.innerHTML = 'Computer won. Better luck next time.';
+    }
+}
