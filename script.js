@@ -30,6 +30,7 @@ scissorsButton.addEventListener ('click', () =>{
     playRound(playerSelection)
     gameCount(playerCount, computerCount);
 });
+
 /* Results container*/
 const resultDiv = document.createElement('div');
 resultDiv.classList.add('resultDiv');
@@ -69,22 +70,22 @@ function playRound(playerSelection) {
         resultText.innerHTML = "It's a tie!";           
         return null;
     }else if (playerSelection == "rock" && computerSelection == "paper"){
-        resultText.innerHTML = "Yikes! The computer won, paper beats rock! Computer wins!";
+        resultText.innerHTML = "Yikes! The computer won, paper beats rock!";
         return computerCount += 1;
     }else if (playerSelection == "rock" && computerSelection == "scissors"){
-        resultText.innerHTML = "Nice shot! Rock beats scissors! Player wins!";
+        resultText.innerHTML = "Nice shot! Rock beats scissors!";
         return playerCount += 1;
     }else if (playerSelection == "paper" && computerSelection == "rock"){
-        resultText.innerHTML = "Heck yes! Paper covers rock! Player wins!";
+        resultText.innerHTML = "Heck yes! Paper covers rock!";
         return playerCount += 1;
     }else if (playerSelection == "paper" && computerSelection == "scissors"){
-        resultText.innerHTML = "Aww snap! Scissors cuts through paper! Computer wins!";
+        resultText.innerHTML = "Aww snap! Scissors cuts through paper!";
         return computerCount += 1;
     }else if (playerSelection == "scissors" && computerSelection == "paper"){
-        resultText.innerHTML = "+1 for you! Scissors beats paper! Player wins!";
+        resultText.innerHTML = "+1 for you! Scissors beats paper!";
         return playerCount += 1;
     }else{
-        resultText.innerHTML = "Ouch! Rock smashes scissors! Computer wins!";
+        resultText.innerHTML = "Ouch! Rock smashes scissors!";
         return computerCount += 1;
     };
 };
