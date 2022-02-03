@@ -1,0 +1,102 @@
+/*Global Styles*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'ShadowsIntoLight';
+    src: url(/rps-js/fonts/ShadowsIntoLight-Regular.ttf);
+}
+
+body {
+    background-color:#F0F8FF ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/* Header Styles */
+h1{
+    font-family: 'ShadowsIntoLight', Arial, sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2{
+    font-family: 'ShadowsIntoLight', Arial, sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+.btn-container {
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+.resultDiv {
+    font-family: 'ShadowsIntoLight', Arial, sans-serif;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+}
+.counterDiv {
+    font-family: 'ShadowsIntoLight', Arial, sans-serif;
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+}
+.btn {
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    transition: .2s;
+}
+
+.btn:hover{
+    transform: scale(1.4);
+    border: 2px solid  #C6E2FF;
+    
+}
+
+footer {
+    background-color: #FCF5E5;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    gap: 1em;
+    margin-top: auto;
+}
+
+#gitLink {
+    background-color: transparent;
+    border: none;
+}
+
+#againBtn {
+    display: none; 
+    font-family: 'ShadowsIntoLight', Arial, sans-serif;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    height: 100px;
+    width: auto;
+    font-size: 2em;
+    transition: .2s;
+}
+
+#againBtn:hover{
+    transform: scale(1.1);
+    border: 2px solid  #C6E2FF;
+}
+
+.break {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+}
