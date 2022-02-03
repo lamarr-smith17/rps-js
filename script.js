@@ -1,18 +1,9 @@
-/* Start of code*/
-var playerCount = 0;
-var computerCount = 0;
-const container = document.createElement('div');
-container.classList.add('container');
-document.body.append(container);
-
 /*Buttons*/
-const rockButton = document.createElement('button');
-const paperButton = document.createElement('button');
-const scissorsButton = document.createElement('button');
-rockButton.innerHTML = 'Rock';
-paperButton.innerHTML = 'Paper';
-scissorsButton.innerHTML = 'Scissors';
-container.append(rockButton, paperButton, scissorsButton);
+const container = document.querySelector('.btn-container');
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+
 rockButton.addEventListener ('click', () =>{
     let playerSelection = "rock";
     playRound(playerSelection);
@@ -34,22 +25,39 @@ scissorsButton.addEventListener ('click', () =>{
 /* Results container*/
 const resultDiv = document.createElement('div');
 resultDiv.classList.add('resultDiv');
-container.append(resultDiv);
+document.body.append(resultDiv);
 const resultText = document.createElement('p');
 resultText.classList.add('resultText');
 resultDiv.append(resultText);
 
 /*The Counters*/
+let playerCount = 0;
+let computerCount = 0;
 const playerText = document.createElement('p');
 const computerText = document.createElement('p');
+const counterDiv = document.createElement('div');
 playerText.id = 'playerText';
 computerText.id = 'computerText';
-resultDiv.append(playerText);
-resultDiv.append(computerText);
+counterDiv.classList.add('counterDiv');
+document.body.append(counterDiv);
+counterDiv.append(playerText);
+counterDiv.append(computerText);
 playerText.innerHTML = 'Player: 0';
-computerText.innerHTML = 'Computer: 0';
+computerText.innerHTML = 'Computer: 0'; 
 
+/* Break Div to move play again button to bottom of counters*/ 
+const breakDiv = document.createElement('div');
+breakDiv.classList.add('break');
+counterDiv.appendChild(breakDiv);
 
+/* Play Again Button */
+const againBtn = document.createElement('button');
+againBtn.id = 'againBtn';
+againBtn.innerHTML = 'Play Again?';
+breakDiv.append(againBtn)
+againBtn.addEventListener('click', playAgain); 
+
+/* Functions */
 function computerPlay() {
     const choices = ['Rock', 'Paper', 'Scissors'];
     const randomNum = Math.floor(Math.random()*choices.length);
@@ -103,8 +111,20 @@ function gameCount(playerCount, computerCount){
 function winner(){
     if(playerCount == 5){
         resultText.innerHTML = 'You won! Great job!';
+        againBtn.style.display = 'block';
     }
     if(computerCount == 5){
         resultText.innerHTML = 'Computer won. Better luck next time.';
+        againBtn.style.display = 'block';
     }
 }
+
+function playAgain(){
+    playerCount = 0;
+    computerCount = 0;
+    resultText.innerHTML = "";
+    playerText.innerHTML = "Player: 0";
+    computerText.innerHTML = "Computer: 0";
+    againBtn.style.display = 'none';
+};
+
