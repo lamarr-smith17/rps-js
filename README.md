@@ -1,6 +1,6 @@
 FINAL UPDATE!!
 I completed my version of Rock-Paper-Scissors! This project was very helpful for me because it was the first time I was exposed to using JavaScript. I learned how to manipulate the DOM, use eventListeners, and add/remove elements within the DOM using JS.
-<img src = "imgs/screenshot.PNG"
+<img src = "imgs/screenshot.PNG">
 
 UPDATE 02/03/2022
 I have added buttons and the results now display on the page! No more console logs! However, I still have the older version of just console logs to show my growth.
