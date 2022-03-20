@@ -1,5 +1,6 @@
 FINAL UPDATE!!
 I completed my version of Rock-Paper-Scissors! This project was very helpful for me because it was the first time I was exposed to using JavaScript. I learned how to manipulate the DOM, use eventListeners, and add/remove elements within the DOM using JS.
+Link to RPS: https://lamarr-smith17.github.io/rps-js/
 <img src = "imgs/screenshot.PNG">
 
 UPDATE 02/03/2022
